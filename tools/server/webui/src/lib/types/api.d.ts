@@ -206,6 +206,7 @@ export interface ApiChatCompletionRequest {
 	model?: string;
 	return_progress?: boolean;
 	tools?: ApiChatCompletionTool[];
+	chat_template_kwargs?: Record<string, boolean | number | string>;
 	// Reasoning parameters
 	reasoning_format?: string;
 	// Generation parameters

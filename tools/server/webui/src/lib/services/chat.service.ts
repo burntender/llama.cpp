@@ -111,6 +111,7 @@ export class ChatService {
 			custom,
 			timings_per_token,
 			// Config options
+			disableThinking,
 			disableReasoningParsing
 		} = options;
 
@@ -175,6 +176,13 @@ export class ChatService {
 		// Include model in request if provided (required in ROUTER mode)
 		if (options.model) {
 			requestBody.model = options.model;
+		}
+
+		if (disableThinking) {
+			requestBody.chat_template_kwargs = {
+				...(requestBody.chat_template_kwargs ?? {}),
+				enable_thinking: false
+			};
 		}
 
 		requestBody.reasoning_format = disableReasoningParsing

@@ -9,6 +9,7 @@ export const SETTING_CONFIG_DEFAULT: Record<string, string | number | boolean> =
 	showSystemMessage: true,
 	theme: ColorMode.SYSTEM,
 	showThoughtInProgress: false,
+	disableThinking: true,
 	disableReasoningParsing: false,
 	showRawOutputSwitch: false,
 	keepStatsVisible: false,
@@ -101,6 +102,8 @@ export const SETTING_CONFIG_INFO: Record<string, string> = {
 	max_tokens: 'The maximum number of token per output. Use -1 for infinite (no limit).',
 	custom: 'Custom JSON parameters to send to the API. Must be valid JSON format.',
 	showThoughtInProgress: 'Expand thought process by default when generating messages.',
+	disableThinking:
+		'Send chat_template_kwargs.enable_thinking=false so reasoning models answer directly without visible thinking.',
 	disableReasoningParsing:
 		'Send reasoning_format=none to prevent server-side extraction of reasoning tokens into separate field',
 	showRawOutputSwitch:

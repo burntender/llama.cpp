@@ -53,6 +53,7 @@ export const SETTINGS_KEYS = {
 	AGENTIC_MAX_TOOL_PREVIEW_LINES: 'agenticMaxToolPreviewLines',
 	SHOW_TOOL_CALL_IN_PROGRESS: 'showToolCallInProgress',
 	// Developer
+	DISABLE_THINKING: 'disableThinking',
 	DISABLE_REASONING_PARSING: 'disableReasoningParsing',
 	SHOW_RAW_OUTPUT_SWITCH: 'showRawOutputSwitch',
 	CUSTOM: 'custom'

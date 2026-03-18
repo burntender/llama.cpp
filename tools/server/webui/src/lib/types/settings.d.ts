@@ -22,6 +22,8 @@ export interface SettingsChatServiceOptions {
 	model?: string;
 	// System message to inject
 	systemMessage?: string;
+	// Disable model-side thinking via chat template kwargs
+	disableThinking?: boolean;
 	// Disable reasoning parsing (use 'none' instead of 'auto')
 	disableReasoningParsing?: boolean;
 	tools?: OpenAIToolDefinition[];

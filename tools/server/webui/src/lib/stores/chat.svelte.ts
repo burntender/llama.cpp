@@ -1478,6 +1478,8 @@ class ChatStore {
 
 		if (currentConfig.systemMessage) apiOptions.systemMessage = currentConfig.systemMessage;
 
+		if (currentConfig.disableThinking) apiOptions.disableThinking = true;
+
 		if (currentConfig.disableReasoningParsing) apiOptions.disableReasoningParsing = true;
 
 		if (hasValue(currentConfig.temperature))
