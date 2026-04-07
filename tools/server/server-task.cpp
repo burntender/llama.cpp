@@ -1338,6 +1338,8 @@ json server_task_result_cmpl_final::to_json_anthropic_stream() {
                 {"stop_sequence", stopping_word.empty() ? nullptr : json(stopping_word)}
             }},
             {"usage", {
+                {"cache_read_input_tokens", n_prompt_tokens_cache},
+                {"input_tokens", n_prompt_tokens - n_prompt_tokens_cache},
                 {"output_tokens", n_decoded}
             }}
         }}
@@ -1761,7 +1763,8 @@ json server_task_result_cmpl_partial::to_json_anthropic() {
                         {"content_block", {
                             {"type", "tool_use"},
                             {"id", diff.tool_call_delta.id},
-                            {"name", diff.tool_call_delta.name}
+                            {"name", diff.tool_call_delta.name},
+                            {"input", json::object()}
                         }}
                     }}
                 });
